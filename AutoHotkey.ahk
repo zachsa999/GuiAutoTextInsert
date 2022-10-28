@@ -2,18 +2,22 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-winName = 4F DISPATCH - Vivaldi
+winName = 4F DISPATCH *
 
 ^!b::
-    ; Send, f
-    ; Sleep 500
-    Send, accounting@naturalproteins.ca
-    Send, {Enter}
-    Send, reception@rockypond.ca
-    Send, {Enter}
-    Send, keith@rockypond.ca
-    Send, {Enter}
-    Send, ^{Enter}
+    Sleep 50
+    Send f
+    Sleep 750
+    Send accounting@naturalproteins.ca
+    Send {Enter}
+    Sleep 5
+    Send reception@rockypond.ca
+    Send {Enter}
+    Sleep 5
+    Send keith@rockypond.ca
+    Send {Enter}
+    Sleep 50
+    Send ^{Enter}
 return
 
 ^!m::
@@ -24,9 +28,10 @@ return
 
 return
 
-^!n:: 
+^!n::
     Send, !{Enter}
     Send, {space}(invoiced)
     Send, {ENTER}
     Send, {UP}
 return
+
