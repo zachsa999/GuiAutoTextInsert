@@ -24,7 +24,7 @@ return
     Send {Enter}
     Send {space}(confirmed)
     Send {ENTER}
-    Send {UP}
+    ; Send {UP}
 
 return
 
@@ -32,6 +32,6 @@ return
     Send {Enter}
     Send {space}(invoiced)
     Send {ENTER}
-    Send {UP}
+    ; Send {UP}
 return
 
