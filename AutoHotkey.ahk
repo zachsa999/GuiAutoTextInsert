@@ -21,17 +21,17 @@ winName = 4F DISPATCH *
 return
 
 ^!m::
-    Send, !{Enter}
-    Send, {space}(confirmed)
-    Send, {ENTER}
-    Send, {UP}
+    Send {Enter}
+    Send {space}(confirmed)
+    Send {ENTER}
+    Send {UP}
 
 return
 
 ^!n::
-    Send, !{Enter}
-    Send, {space}(invoiced)
-    Send, {ENTER}
-    Send, {UP}
+    Send {Enter}
+    Send {space}(invoiced)
+    Send {ENTER}
+    Send {UP}
 return
 
