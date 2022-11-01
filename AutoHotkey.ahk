@@ -26,6 +26,11 @@ return
     Send ^+!0
 return
 
+^!k::
+    ; Ties into a macro in Google sheets
+    Send ^+!9
+return
+
 InsertText(Text) {
     WinGetTitle, Title, A
     If (Title == "F4F Dispatch 2022 - Google Sheets - Google Chrome") {
