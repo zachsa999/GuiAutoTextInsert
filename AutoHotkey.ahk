@@ -2,36 +2,45 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-winName = 4F DISPATCH *
-
-^!b::
-    Sleep 50
-    Send f
-    Sleep 750
+^!j::
+    ; Sleep 50
+    ; Send f
+    ; Sleep 750
     Send accounting@naturalproteins.ca
+    Sleep 5
     Send {Enter}
     Sleep 5
     Send reception@rockypond.ca
+    Sleep 5
     Send {Enter}
     Sleep 5
     Send keith@rockypond.ca
+    Sleep 5
     Send {Enter}
     Sleep 50
     Send ^{Enter}
 return
 
-^!m::
-    Send {Enter}
-    Send {space}(confirmed)
-    Send {ENTER}
-    ; Send {UP}
-
+^!l::
+    ; Ties into a macro in Google sheets
+    Send ^+!0
 return
 
-^!n::
-    Send {Enter}
-    Send {space}(invoiced)
-    Send {ENTER}
-    ; Send {UP}
-return
+InsertText(Text) {
+    WinGetTitle, Title, A
+    If (Title == "F4F Dispatch 2022 - Google Sheets - Google Chrome") {
+        ;Google Sheets routine
+        Send {Enter}
+        Send {space}%Text%
+        Send {Enter}
+    } Else If (Title == "F4F DISPATCH - Google Chrome") {
+        ; Icloud routine
+        Send !{Enter}
+        Send {space}%Text%
+        Send {ENTER}
 
+    } Else {
+        Return
+    }
+
+}
