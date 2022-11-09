@@ -2,10 +2,7 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-^!j::
-    ; Sleep 50
-    ; Send f
-    ; Sleep 750
+^!h::
     Send accounting@naturalproteins.ca
     Sleep 5
     Send {Enter}
@@ -21,31 +18,37 @@ SetWorkingDir, %A_ScriptDir%
     Send ^{Enter}
 return
 
-^!l::
+^!k::
     ; Ties into a macro in Google sheets
     Send ^+!0
 return
 
-^!k::
+^!j::
     ; Ties into a macro in Google sheets
     Send ^+!9
 return
 
-InsertText(Text) {
-    WinGetTitle, Title, A
-    If (Title == "F4F Dispatch 2022 - Google Sheets - Google Chrome") {
-        ;Google Sheets routine
-        Send {Enter}
-        Send {space}%Text%
-        Send {Enter}
-    } Else If (Title == "F4F DISPATCH - Google Chrome") {
-        ; Icloud routine
-        Send !{Enter}
-        Send {space}%Text%
-        Send {ENTER}
+; bind wasd keys to arrow keys software macro
+#InstallKeybdHook
 
-    } Else {
-        Return
-    }
+CapsLock::Return
 
-}
+^CapsLock::
+    Send CapsLock
+return
+
+CapsLock & a::
+Send {Left}
+return
+
+CapsLock & w::
+Send {Up}
+return
+
+CapsLock & d::
+Send {Right}
+return
+
+CapsLock & s::
+Send {Down}
+return
