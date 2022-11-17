@@ -1,4 +1,6 @@
 #SingleInstance, Force
+#InstallKeybdHook
+
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
@@ -18,23 +20,14 @@ SetWorkingDir, %A_ScriptDir%
     Send ^{Enter}
 return
 
-^!k::
-    ; Ties into a macro in Google sheets
-    Send ^+!0
-return
-
-^!j::
-    ; Ties into a macro in Google sheets
-    Send ^+!9
-return
-
 ; bind wasd keys to arrow keys software macro
-#InstallKeybdHook
 
-CapsLock::Return
+CapsLock::
+    Send {Delete}
+Return
 
-^CapsLock::
-    Send CapsLock
+!CapsLock::
+    Send {CapsLock}
 return
 
 CapsLock & a::
@@ -52,3 +45,7 @@ return
 CapsLock & s::
 Send {Down}
 return
+
+LWin::
+    Send !{Space}
+Return
